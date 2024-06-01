@@ -50,5 +50,5 @@ if st.button('Get Fare'):
         'lon': [pickup_longitude, dropoff_longitude]
     })
 
-    # Display the map with the pickup location
+    # Display the map with the locations
     st.map(locations_df)
