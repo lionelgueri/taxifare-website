@@ -44,5 +44,11 @@ if st.button('Get Fare'):
     # Finally, we can display the prediction to the user
     st.write(f'The predicted fare is: {prediction}')
 
+    # Create a DataFrame for the pickup and dropoff locations
+    locations_df = pd.DataFrame({
+        'lat': [pickup_latitude, dropoff_latitude],
+        'lon': [pickup_longitude, dropoff_longitude]
+    })
+
     # Display the map with the pickup location
-    st.map(pd.DataFrame({'lat': [pickup_latitude], 'lon': [pickup_longitude]}, columns=['lat', 'lon']))
+    st.map(locations_df)
